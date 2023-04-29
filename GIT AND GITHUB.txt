@@ -1,0 +1,69 @@
+***********************GIT AND GITHUB****************************
+
+1. CVCS - stands for centralized version control system
+2. DVCS - stands for distributed version control system
+3. In cvcs there can be multiple working copy but there can be only one remote or central repository 
+4. In dvcs there can be multiple working copies with multiple local repositories and one remote or central repository
+5. In a repository we have working space, staging area and local repository
+6. To move our code from working space to staging area we use add
+7. To move our code from staging area to local repository we use commit
+8. After commit we can push our code to central repository that is github using push command
+9. we can also pull our code from central repository that is from git to our local repository we use pull command
+10. gitinit - stands for git initialization --> And default branch will master branch.
+
+***************************GIT COMMANDS****************************
+
+1. yum update -y - used to update everything
+2. yum install git -y - used to install git
+3. which git - used to check where git has been installed
+4. git --version or git -v - used to check version of git
+5. git config --global user.name "syed" - used to create user
+6. git config --global user.email "syedzaid@gmail.com" - used to create user mail id
+7. git config --list - used to check if user and his mail id has been created or not 
+
+********************************NEW GIT COMMANDS********************
+
+1. git init - used to create a local repo
+2. git status - used to check the status
+3. git add . - used to put code in staging area
+4. git commit -m "my first commit from mumbai" - used to commit code to local repo and now if run git status command there won't be anything present in working directory
+5. git log - it shows what has been commited
+6. git show commitid - it shows what content is present inside respective id
+7. git remote add origin https://github.com/zaid1244567/centralgit.git - used to connect with central repo
+8. git push -u origin master or git push origin master - first it will ask to enter username and password of our github account once after we enter the credentials it will push the code from local repo to central repo
+9. vi .gitignore - used to ignore any files format like .css and .java etc
+10. git add .gitignore - used to add into staging area
+11.  git commit -m "ignore file format" - it ignores all formats which was mentioned in vi editor
+12. git log -1 - used to see 1 line of latest commit
+13. git log -2 - used to see 2 lines of latest commit
+14. git log --oneline - used to see all commits in single line
+15.  git log --grep "ignore" - used to see all commits in which "ignore" word is mentioned 
+16.  git log --grep "commit" - used to see all commits in which "commit" word is mentioned 
+
+******************************************************************************
+
+1. git branch - is used to check in which branch we currently present
+2. git branch branch1 - used to create a new branch
+3. git checkout branch1 - is used to move from current branch to branch1
+4. git merge branch1 - is used to merge branch1 with master if we are in master
+5. conflict - we get conflicts when we have same file names for both master branch and branch1 and content present inside it is totally different so git won't understand which content should come first to overcome this conflict we can open vi editor and resolve the conflict accordingly
+6. git branch -d branch1 - used to delete branch1
+7. git stash - used to store our current working code in temporary storage
+8. vi demofile - after running 'git stash' command if we execute vi demofile nothing will be present in working directory because it has been moved to stash
+9. git stash list - it displays the list of stash
+10. git stash apply stash@{0} - it used to retrieve data back from stash to working directory
+11. git stash clear - used to clear the list of stash.
+12.  git reset . - once after data is moved to staging area we can undo it by using this command
+13. git reset --hard - used to delete code from staging area as well as working directory
+
+*****************************************************************************************
+
+1. git revert commitid - is used to take previous commit
+2. git clean -n - used to delete files like recycle bin or dry run
+3. git clean -f - used to delete files permamnetly like shift + delete or forcrfully delete
+4. git tag -a tagname -m "this is very important commit" commit id - use create a tag
+5. git show important - used to check if 'important' tag has been created
+6. git tag -d important - used to delete tag
+7. git clone githuburl - it will copy centralgit repository 
+
+***************************************************************************************** 
