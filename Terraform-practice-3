@@ -1,0 +1,59 @@
+********************major commands of terraform*******************
+
+Terraform init
+Terraform plan
+Terraform validate
+Terraform apply
+Terraform destroy
+vi file1.tf here filname extension will be tf
+
+*************************To connect with aws***************************************
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+  }
+}
+
+
+*********used to login to aws with the help of terraform by below script*************
+syntax:
+
+provider "aws" {                  
+  region     = "us-west-2"
+  access_key = "my-access-key"
+  secret_key = "my-secret-key"
+}
+
+example:
+provider "aws" {
+  region     = "ap-southeast1"
+  access_key = "AKIAT47RIUVSE3XXCWKA"
+  secret_key = "0DDZl7h7pKtVCEcGHaEr1Qd7dit4MIevbK9M0vL3"
+}
+
+*********For creating ec2-instance with the help of terraform**********************
+syntax:
+resource "aws_instance" "test" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}
+
+example:
+resource "aws_instance" "s1" {
+  ami           = "ami-03e312c9b09e29831"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "server1"
+  }
+}
+*********************************************************************
+
+aws terraform provider : https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_instance_state
